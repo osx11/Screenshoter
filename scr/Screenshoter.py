@@ -1,11 +1,25 @@
-import keyboard
 import os
 from datetime import datetime
+from time import sleep
 
-from PIL import ImageGrab
-from plyer import notification
-import win32gui
-import pywinauto  # без этой строки разрешение экрана и координаты определяются неверно
+try:
+    import keyboard
+    from PIL import ImageGrab
+    from plyer import notification
+    import win32gui
+    import pywinauto  # без этой строки разрешение экрана и координаты определяются неверно
+except ModuleNotFoundError:
+    print('''
+|||||||||||||||||||||||||| Ошибка ||||||||||||||||||||||||||
+
+Один из модулей отсутствует. Запуск установщика через 3 сек.
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    ''')
+    sleep(3)
+    os.system('cls')
+    os.system('python installer.py')
+    exit(0)
 
 date = datetime.now().strftime('%d.%m.%Y')
 root_path = os.path.expanduser('~/Documents/Screenshoter')
