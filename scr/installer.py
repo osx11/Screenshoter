@@ -1,6 +1,8 @@
 import os
 from time import sleep
 
+modules = ['Pillow', 'Plyer', 'keyboard', 'pywin32', 'pywinauto']
+
 print('''
 |||||||||||||
 Upgrading pip
@@ -9,45 +11,13 @@ Upgrading pip
 
 os.system('python -m pip install --upgrade pip')
 
-print('''
-|||||||||||||||||||
-Installing Pillow
-|||||||||||||||||||
-''')
-
-os.system('pip install Pillow')
-
-print('''
-||||||||||||||||||
-Installing Plyer
-||||||||||||||||||
-''')
-
-os.system('pip install Plyer')
-
-print('''
-|||||||||||||||||||||
-Installing keyboard
-|||||||||||||||||||||
-''')
-
-os.system('pip install keyboard')
-
-print('''
-||||||||||||||||||||
-Installing pywin32
-||||||||||||||||||||
-''')
-
-os.system('pip install pywin32')
-
-print('''
+for module in modules:
+    print('''
 ||||||||||||||||||||||
-Installing pywinauto
+Installing %s
 ||||||||||||||||||||||
-''')
-
-os.system('pip install pywinauto')
+    ''' % module)
+    os.system('pip install %s' % module)
 
 print('''
 |||||||||||||||||||||||||||||||||||
