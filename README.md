@@ -5,4 +5,5 @@ Used packages:
 PIL (Pillow),
 Plyer,
 keyboard,
-pywin32
+pywin32,
+pywinauto
