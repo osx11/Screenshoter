@@ -1,5 +1,5 @@
 # Screenshoter
-Takes a screenshot of G. Chrome window
+Takes a screenshot of user's focused window.
 
 Used packages:
 PIL (Pillow),
